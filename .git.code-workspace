@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../AgriCulture2/AgriCulture/.git"
+		},
+		{
+			"path": "../../AgriCulture2/AgriCulture/controller"
+		},
+		{
+			"path": "../../AgriCulture2/AgriCulture/model"
+		},
+		{
+			"path": "../../AgriCulture2/AgriCulture/view"
+		},
+		{
+			"path": "../../AgriCulture2/AgriCulture/.dist"
+		}
+	]
+}
