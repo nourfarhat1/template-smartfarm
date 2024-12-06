@@ -46,10 +46,9 @@ echo '<!DOCTYPE html>
 
   <header id="header" class="header d-flex align-items-center position-relative">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/our logo.png" alt="Agrivatorslogo">
-        <h1 class="sitename">smartfarm</h1> 
+        <h1 class="sitename">smartfarm</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -89,15 +88,15 @@ if (isset($_GET['id'])) {
     $event = $eventController->showEvent($eventId);
 
     if ($event) {
-        echo '<form method="POST" action="edit.php?id=' . $event['id_e'] . '">';
+        echo '<form method="POST" action="edit.php?id=' . $event['id_e'] . '">';  
         echo '<label for="nom">Event Name:</label><br>';
-        echo '<input type="text" id="nom" name="nom" value="' . $event['nom'] . '" required><br><br>';
+        echo '<input type="text" id="nom" name="nom" value="' . htmlspecialchars($event['nom'], ENT_QUOTES) . '" ><br><br>';
 
         echo '<label for="disc">Event Description:</label><br>';
-        echo '<textarea id="disc" name="disc" required>' . $event['disc'] . '</textarea><br><br>';
+        echo '<textarea id="disc" name="disc" >' . htmlspecialchars($event['disc'], ENT_QUOTES) . '</textarea><br><br>';
 
         echo '<label for="date">Event Date:</label><br>';
-        echo '<input type="date" id="date" name="date" value="' . $event['date'] . '" required><br><br>';
+        echo '<input type="date" id="date" name="date" value="' . htmlspecialchars($event['date'], ENT_QUOTES) . '" ><br><br>';
 
         echo '<input type="submit" value="Update Event">';
         echo '</form>';
@@ -127,6 +126,7 @@ echo '  </div>
       </div>
     </section>
   </main>
+  
 
   <footer id="footer" class="footer dark-background">
     <div class="footer-top">
@@ -135,7 +135,7 @@ echo '  </div>
           <div class="col-lg-4 col-md-6 footer-about">
             <a href="index.html" class="logo d-flex align-items-center">
               <img src="assets/img/our logo.png" alt="Agrivatorslogo">
-              <h1 class="sitename">smartfarm</h1> 
+              <h1 class="sitename">smartfarm</h1>
             </a>
             <div class="footer-contact pt-3">
               <p>tunisia , esprit</p>
@@ -163,6 +163,7 @@ echo '  </div>
 
   <!-- Main JS File -->
   <script src="main.js"></script>
+  
 
 </body>
 </html>';

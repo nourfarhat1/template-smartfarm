@@ -85,6 +85,23 @@ class EventModel {
         return $stmt->fetch();
     }
 
+    public function getAllEvents2($searchQuery) {
+        // Example query
+        $query = "SELECT * FROM events WHERE nom LIKE ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute(['%' . $searchQuery . '%']);
+        $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        // Debugging
+        var_dump($events);  // Check the output of the query
+        
+        return $events;
+    }
+    
+
+    
+    
+
     
 }
 

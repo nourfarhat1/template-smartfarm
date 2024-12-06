@@ -1,19 +1,55 @@
 <?php
 include_once(__DIR__ . '/../../controller/event_controller.php');
+include_once(__DIR__ . '/../../config.php');
+$userid = 1;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nom = $_POST['nom'];
     $disc = $_POST['disc'];
     $date = $_POST['date'];
 
-    $event = new Event(null, $nom, $disc, $date);
+    $conn = config::getConnexion();
 
-    $eventController = new EventController();
-    $eventController->addEvent($event);
+    try {
+        $conn->beginTransaction();
 
-    echo "L'événement a été ajouté avec succès !";
+        $stmt = $conn->prepare("INSERT INTO event (nom, disc, date) VALUES (?, ?, ?)");
+        $stmt->bindParam(1, $nom);
+        $stmt->bindParam(2, $disc);
+        $stmt->bindParam(3, $date);
+
+        if ($stmt->execute()) {
+            $stmt = $conn->prepare("SELECT id_e FROM event WHERE nom = ? AND disc = ? AND date = ?");
+            $stmt->bindParam(1, $nom);
+            $stmt->bindParam(2, $disc);
+            $stmt->bindParam(3, $date);
+            $stmt->execute();
+
+            $event = $stmt->fetch(PDO::FETCH_ASSOC);
+            $eventId = $event['id_e'];
+
+            $stmtUserEvent = $conn->prepare("INSERT INTO acceder_event (id_utilisateur, id_e) VALUES (?, ?)");
+            $stmtUserEvent->bindParam(1, $userid);
+            $stmtUserEvent->bindParam(2, $eventId);
+
+            if ($stmtUserEvent->execute()) {
+                $conn->commit();
+                echo "L'événement a été ajouté et l'utilisateur a été associé avec succès !";
+            } else {
+                $conn->rollBack();
+                echo "Erreur lors de l'ajout de l'utilisateur à l'événement.";
+            }
+        } else {
+            $conn->rollBack();
+            echo "Erreur lors de l'ajout de l'événement.";
+        }
+    } catch (Exception $e) {
+        $conn->rollBack();
+        echo "Erreur: " . $e->getMessage();
+    }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,35 +124,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </div>
     </div>
 
-
-  
-
-
     <section id="services" class="services section">
       <div class="container">
         <div class="row">
           <div class="col-md-8 offset-md-2">
             <h2>Ajouter un evenement</h2>
-<form method="POST" action="add.php">
-    <label for="nom">Nom de l'événement:</label><br>
-    <input type="text" id="nom" name="nom" required><br><br>
+            <form id="eventForm" method="POST" action="add.php">
+                <label for="nom">Nom de l'événement:</label><br>
+                <input type="text" id="nom" name="nom"><br><br>
 
-    <label for="disc">Description de l'événement:</label><br>
-    <textarea id="disc" name="disc" required></textarea><br><br>
+                <label for="disc">Description de l'événement:</label><br>
+                <textarea id="disc" name="disc" ></textarea><br><br>
 
-    <label for="date">Date de l'événement:</label><br>
-    <input type="date" id="date" name="date" required><br><br>
+                <label for="date">Date de l'événement:</label><br>
+                <input type="date" id="date" name="date" ><br><br>
 
-    <input type="submit" value="Ajouter l'événement">
-</form>
-</div>
+                <input type="submit" value="Ajouter l'événement">
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-    </div>
-      </div>
-    </section>
-  </main>
+
   <footer id="footer" class="footer dark-background">
     <div class="footer-top">
       <div class="container">
@@ -152,6 +182,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   <!-- Main JS File -->
   <script src="main.js"></script>
+
+  <script>
+    document.getElementById('eventForm').addEventListener('submit', function(event) {
+      // Validation for non-empty values
+      const nom = document.getElementById('nom').value;
+      const disc = document.getElementById('disc').value;
+      const date = document.getElementById('date').value;
+
+      if (!nom || !disc || !date) {
+        alert("Tous les champs sont obligatoires.");
+        event.preventDefault();  // Prevent form submission
+      } else if (new Date(date) < new Date()) {
+        alert("La date de l'événement ne peut pas être dans le passé.");
+        event.preventDefault();
+      }
+    });
+  </script>
 
 </body>
 </html>
