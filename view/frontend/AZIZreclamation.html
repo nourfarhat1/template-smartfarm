@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Contact - AgriCulture Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="main.css" rel="stylesheet">
+
+  <style>
+    /* Star Rating */
+    .star-rating {
+      display: flex;
+      justify-content: center;
+      font-size: 30px;
+    }
+
+    .star {
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .star:hover,
+    .star.selected {
+      color: #ffcc00;
+    }
+
+    /* Search Bar Styling */
+    .search-bar {
+      max-width: 500px;
+      margin: 20px auto;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    /* Hide reclamations when they don't match */
+    .reclamation-item {
+      display: block;
+    }
+  </style>
+</head>
+
+<body class="contact-page">
+
+  <header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/our logo.png" alt="AgriCulture">
+        <h1 class="sitename">smartfarm</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="NOURservices.html" class="active">Our Services</a></li>
+          <li><a href="AHMEDblog.html">blog</a></li>
+          <li><a href="login.html">login</a></li>
+          <li><a href="AZIZreclamation.html">reclamations</a></li>
+          <li><a href="SAMERpanier.html">panier</a></li>
+          <li><a href="MAYSSOUNevents.html">events</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
+      <div class="container position-relative">
+        <h1>Reclamations</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li class="current">Reclamations</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Reclamation Section -->
+    <section id="reclamations" class="reclamations section">
+      <div class="container" data-aos="fade">
+
+        <!-- Search Bar -->
+        <div class="search-bar mb-4">
+          <input type="text" class="search-input form-control" id="searchInput" placeholder="Search by user name..." onkeyup="searchReclamation()">
+        </div>
+
+        <!-- List of Reclamations -->
+        <div class="reclamations-list">
+          <div class="reclamation-item">
+            <div class="user-name">John Doe</div>
+            <p>Subject: Delivery Issue</p>
+            <p>Message: I have not received my order...</p>
+          </div>
+
+          <div class="reclamation-item">
+            <div class="user-name">Jane Smith</div>
+            <p>Subject: Quality Problem</p>
+            <p>Message: The product is defective...</p>
+          </div>
+
+          <div class="reclamation-item">
+            <div class="user-name">Mark Johnson</div>
+            <p>Subject: Payment Issue</p>
+            <p>Message: The payment did not go through...</p>
+          </div>
+
+          <!-- Add more reclamation items here -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <img src="assets/img/our logo.png" alt="Agrivatorslogo">
+              <h1 class="sitename">smartfarm</h1>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Tunisia, Esprit</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>53 *** *** </span></p>
+              <p><strong>Email:</strong> <span>agri.vators@example.com</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="main.js"></script>
+
+  <script>
+    // JavaScript for selecting star rating
+    const stars = document.querySelectorAll('.star');
+    const ratingInput = document.getElementById('rating');
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        const value = star.getAttribute('data-value');
+        ratingInput.value = value;
+
+        // Remove selected class from all stars
+        stars.forEach(star => star.classList.remove('selected'));
+
+        // Add selected class to clicked star and all stars before it
+        for (let i = 0; i < value; i++) {
+          stars[i].classList.add('selected');
+        }
+      });
+    });
+
+    // JavaScript for search functionality
+    function searchReclamation() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const reclamationItems = document.querySelectorAll(".reclamation-item");
+
+      // Loop through each reclamation item
+      reclamationItems.forEach(item => {
+        const userName = item.querySelector(".user-name").textContent.toLowerCase();
+
+        // If the username matches the search input, show the item, else hide it
+        if (userName.includes(input)) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+
+</html>

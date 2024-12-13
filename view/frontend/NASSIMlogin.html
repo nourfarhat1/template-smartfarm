@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Login Page - AgriCulture</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="main.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #76c893, #a3d39c); /* Fresh green and soft yellow-green gradient */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Updated to a modern and legible font */
+      color: #333; /* Dark text for better contrast */
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: row;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      width: 1000px;
+      box-shadow: 0 9px 15px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+
+    .card .image-container {
+      width: 50%;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card .form-container {
+      width: 70%;
+      padding: 6px;
+    }
+
+    .card h2 {
+      font-size: 2.5rem; /* Increased size for better readability */
+      color: #333;
+      font-weight: 600; /* Slightly bolder for emphasis */
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      background-color: #4CAF50;
+      border: none;
+      padding: 14px 0; /* Increased padding for a better click target */
+      font-size: 1.2rem; /* Increased font size for the button */
+      width: 100%;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .btn-primary:hover {
+      background-color: #45a049;
+    }
+
+    .form-control {
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      padding: 15px;
+      font-size: 1rem; /* Improved font size for readability */
+    }
+
+    .form-label {
+      font-size: 1.1rem; /* Slightly larger for labels */
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .text-center p {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .text-center p a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .logo-container img {
+      width: 100%;
+      max-width: 200px; /* Ensured the logo doesn't get too large */
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        flex-direction: column;
+        width: 90%;
+      }
+
+      .card .image-container {
+        width: 100%;
+        padding: 15px;
+      }
+
+      .card .form-container {
+        width: 100%;
+        padding: 30px;
+      }
+    }
+  </style>
+
+</head>
+
+<body class="blog-page">
+
+  <header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/our logo.png" alt="AgriCulture">
+        <h1 class="sitename">smartfarm</h1> 
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="NOURservices.html" class="active">Our Services</a></li>
+          <li><a href="AHMEDblog.html">Blog</a></li>
+          <li><a href="NASSIMlogin.html">Login</a></li>
+          <li><a href="AZIZreclamation.html">Reclamations</a></li>
+          <li><a href="SAMERpanier.html">Panier</a></li>
+          <li><a href="MAYSSOUNevents.html">Events</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
+      <div class="container position-relative">
+        <h1>Login</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li class="current">Login</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <div class="container">
+      <div class="card">
+        <div class="image-container">
+          <div class="logo-container">
+            <img src="assets/img/our logo.png" alt="Logo">
+          </div>
+        </div>
+        <div class="form-container">
+          <h2>Login</h2>
+          <form action="login.php" method="post">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="firstname" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" required>
+              </div>
+              <div class="col-md-6">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastname" name="lastname" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+          <div class="text-center mt-3">
+            <p>Don’t have an account? <a href="register.html">Register here</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <img src="assets/img/our logo.png" alt="Agrivatorslogo">
+              <h1 class="sitename">smartfarm</h1>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Tunisia, Esprit</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>53 *** *** </span></p>
+              <p><strong>Email:</strong> <span>agri.vators@example.com</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="main.js"></script>
+
+</body>
+
+</html>
