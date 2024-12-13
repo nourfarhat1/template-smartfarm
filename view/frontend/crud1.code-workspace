@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../crud1"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+        "php.debug.executablePath": "C:/xampp/php/php.exe"
+    }
+}
