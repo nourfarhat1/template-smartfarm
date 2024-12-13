@@ -1,0 +1,71 @@
+/* Styles pour le panier et l'affichage des produits */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 20px;
+}
+
+.cart-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.cart-counter {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-box {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-details h2 {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.product-details p {
+    color: #777;
+}
+
+.product-details form {
+    margin-top: 10px;
+}
+
+.product-details button {
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.product-details button:hover {
+    background-color: #218838;
+}
+
+.image-placeholder {
+    background-color: #f4f4f4;
+    height: 150px;
+    margin-bottom: 10px;
+}

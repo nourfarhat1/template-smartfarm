@@ -1,0 +1,120 @@
+/* historique_panier.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 30px;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.historique-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.historique-entry:last-child {
+    border-bottom: none;
+}
+
+.historique-entry p {
+    margin: 5px;
+}
+
+.historique-entry .idpanier {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.historique-entry .montant {
+    font-size: 1rem;
+    color: #555;
+}
+
+.historique-entry .details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.details-button {
+    background-color: #28a745;
+    font-size: 14px;
+    padding: 6px 12px;
+}
+
+.details-button:hover {
+    background-color: #218838;
+}
+
+.total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.status-message {
+    text-align: center;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.status-empty {
+    color: #e74c3c;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
